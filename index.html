@@ -1,0 +1,840 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Teacher Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+:root{
+    --forest:#2f4f3e;
+    --sage:#7c9a7e;
+    --light-sage:#eaf0e8;
+    --cream:#f8f6f1;
+    --gold:#c8aa6e;
+    --text:#333333;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Open Sans',sans-serif;
+    background:var(--cream);
+    color:var(--text);
+    line-height:1.7;
+}
+
+/* Navigation */
+
+nav{
+    position:fixed;
+    top:0;
+    width:100%;
+    background:rgba(248,246,241,0.95);
+    backdrop-filter:blur(10px);
+    z-index:1000;
+    border-bottom:1px solid rgba(0,0,0,0.08);
+}
+
+.nav-container{
+    max-width:1200px;
+    margin:auto;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:18px 40px;
+}
+
+.logo{
+    font-family:'Cormorant Garamond',serif;
+    font-size:2rem;
+    color:var(--forest);
+    font-weight:600;
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+    gap:30px;
+}
+
+nav a{
+    text-decoration:none;
+    color:var(--forest);
+    font-weight:600;
+    transition:.3s;
+}
+
+nav a:hover{
+    color:var(--gold);
+}
+
+/* Sections */
+
+section{
+    min-height:100vh;
+    padding:120px 10% 80px;
+    display:flex;
+    align-items:center;
+}
+
+.container{
+    max-width:1200px;
+    margin:auto;
+    width:100%;
+}
+
+.section-title{
+    font-family:'Cormorant Garamond',serif;
+    font-size:3rem;
+    color:var(--forest);
+    margin-bottom:30px;
+    text-align:center;
+}
+
+.section-title-light{
+    font-family:'Cormorant Garamond',serif;
+    font-size:3rem;
+    color:var(--light-sage);
+    margin-bottom:30px;
+    text-align:center;
+}
+
+.small-section-title{
+    font-family:'Cormorant Garamond',serif;
+    font-size:2rem;
+    color:var(--forest);
+    margin-bottom:30px;
+    text-align:left;
+}
+
+.section-subtitle{
+    text-align:center;
+    max-width:800px;
+    margin:auto;
+    margin-bottom:50px;
+    color:#666;
+}
+
+/* Hero */
+
+.hero{
+    background-image:
+    linear-gradient(rgba(47,79,62,0.55),
+    rgba(47,79,62,0.55)),
+    url("photo_edibuilding.jpeg");
+    background-size:cover;
+    background-position:center;
+    color:white;
+}
+
+.hero-content{
+    text-align:center;
+    max-width:900px;
+    margin:auto;
+}
+
+.hero h1{
+    font-family:'Cormorant Garamond',serif;
+    font-size:5rem;
+    margin-bottom:20px;
+}
+
+.hero p{
+    font-size:1.2rem;
+    margin-bottom:30px;
+}
+
+.btn{
+    display:inline-block;
+    padding:14px 34px;
+    background:var(--gold);
+    color:white;
+    text-decoration:none;
+    border-radius:4px;
+    transition:.3s;
+}
+
+.btn_lin{
+    background-image: url("linkedin.jpg"); /* Path to your image */
+    background-size: cover; /* Scale image to cover the button */
+    background-repeat: no-repeat; /* Prevent tiling */
+    background-position: center; /* Center the image */
+    color: white; /* Text color (if overlaying text) */
+    padding: 12px 24px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+
+.btn:hover{
+    background:#b19056;
+}
+
+/* About */
+
+.about{
+    background:var(--light-sage);
+}
+
+.about-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:60px;
+    align-items:center;
+}
+
+.about img{
+    width:90%;
+    border-radius:10px;
+}
+
+.about-text p{
+    margin-bottom:20px;
+    text-align: justify;
+}
+
+.about-info{
+    display:grid;
+    grid-template-columns:repeat(4, 1fr);
+    gap:1px;
+    margin-bottom:50px;
+
+    background:rgba(0,0,0,0.08);
+    border-radius:14px;
+    overflow:hidden;
+
+    box-shadow:0 4px 20px rgba(0,0,0,0.06);
+}
+
+.info-item{
+    background:white;
+    padding:24px;
+    text-align:center;
+}
+
+.label{
+    display:block;
+    font-size:0.85rem;
+    text-transform:uppercase;
+    letter-spacing:1px;
+    color:#7a7a7a;
+    margin-bottom:8px;
+}
+
+.value{
+    display:block;
+    font-size:1.1rem;
+    font-weight:600;
+    color:#2f3e34;
+}
+/* Cards */
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:30px;
+}
+
+.card{
+    background:white;
+    padding:35px;
+    border-radius:10px;
+    box-shadow:0 5px 20px rgba(0,0,0,0.08);
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+}
+
+.card h3{
+    color:var(--forest);
+    margin-bottom:15px;
+    font-family:'Cormorant Garamond',serif;
+    font-size:1.8rem;
+}
+
+/* Teaching Style */
+
+.style{
+    background:var(--sage);
+}
+
+.style-content{
+    max-width:900px;
+    margin:auto;
+    text-align:center;
+}
+
+.quote{
+    font-family:'Cormorant Garamond',serif;
+    font-size:2rem;
+    color:var(--forest);
+    margin-bottom:30px;
+    font-style:italic;
+}
+
+/* Experience */
+
+.timeline{
+    max-width:800px;
+    margin:auto;
+}
+
+.timeline-item{
+    border-left:3px solid var(--sage);
+    padding-left:30px;
+    margin-bottom:40px;
+}
+
+.timeline-item h3{
+    color:var(--forest);
+}
+
+/* Contact */
+
+.contact{
+    background:var(--forest);
+    color:white;
+}
+
+.contact .section-title{
+    color:white;
+}
+
+.contact-box{
+    text-align:center;
+}
+
+.contact-box p{
+    margin-bottom:15px;
+    font-size:1.1rem;
+}
+
+/* read more */
+
+.content-wrapper {
+    position: relative;
+}
+
+.content {
+    max-height: 150px;
+    overflow: hidden;
+    transition: max-height 0.5s ease;
+}
+
+.content.expanded {
+    max-height: 1000px;
+}
+
+
+.about-text {
+    position: relative;
+}
+
+
+.fade-overlay {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 75px; /* sits above buttons */
+
+    height: 80px;
+
+    background: linear-gradient(
+        to bottom,
+        rgba(255,255,255,0),
+        rgba(255,255,255,1)
+    );
+
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.fade-overlay.hidden {
+    opacity: 0;
+}
+
+.read-more-btn {
+    margin-top: 10px;
+    margin-bottom: 15px;
+
+    background: none;
+    border: none;
+
+    color: #4a7c59;
+    font-weight: 600;
+    font-size: large;
+    cursor: pointer;
+
+    padding: 0;
+}
+
+.read-more-btn:hover {
+    text-decoration: underline;
+}
+
+.about-content {
+    max-height: 220px;
+    overflow: hidden;
+    position: relative;
+    transition: max-height 0.5s ease;
+}
+
+.about-content:not(.expanded) {
+    mask-image: linear-gradient(
+        to bottom,
+        black 70%,
+        transparent 100%
+    );
+
+    -webkit-mask-image: linear-gradient(
+        to bottom,
+        black 70%,
+        transparent 100%
+    );
+}
+/* competensies */
+
+.competensy{
+    background:var(--light-sage);
+}
+.competensy-content{
+    max-width:900px;
+    margin:auto;
+    text-align:center;
+}
+/* Responsive */
+@media (max-width: 768px){
+    .about-info{
+        grid-template-columns:1fr 1fr;
+    }
+}
+
+@media (max-width: 480px){
+    .about-info{
+        grid-template-columns:1fr;
+    }
+}
+
+@media(max-width:768px){
+
+    .hero h1{
+        font-size:3rem;
+    }
+
+    .about-grid{
+        grid-template-columns:1fr;
+    }
+
+    nav ul{
+        gap:15px;
+        font-size:0.9rem;
+    }
+
+    .section-title{
+        font-size:2.5rem;
+    }
+}
+
+
+
+
+</style>
+</head>
+
+<body>
+
+<nav>
+    <div class="nav-container">
+        <div class="logo">Teacher Portfolio</div>
+
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#competences">Competences</a></li>
+            <li><a href="#style">Style</a></li>
+            <li><a href="#levels">Materials</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </div>
+</nav>
+
+<!-- HOME -->
+
+<section class="hero" id="home">
+    <div class="hero-content">
+        <h2 class="section-title-light">"Children must be taught how to think, <br> not what to think." <br> ― Margaret Mead</h2>
+
+    
+
+        <a href="#about" class="btn">Discover More</a>
+    </div>
+</section>
+
+<!-- ABOUT -->
+
+<section class="about" id="about">
+    
+
+    <div class="container">
+        <div class="about-info">
+            <div class="info-item">
+                <span class="label">Experience</span>
+                <span class="value">2+ Years</span>
+            </div>
+
+            <div class="info-item">
+                <span class="label">Specialty</span>
+                <span class="value">English</span>
+            </div>
+
+            <div class="info-item">
+                <span class="label">Languages</span>
+                <span class="value">English, Estonian</span>
+            </div>
+
+            <div class="info-item">
+                <span class="label">Location</span>
+                <span class="value">Tallinn</span>
+            </div>
+        </div>
+        <div class="about-grid">
+        
+            <img src="photo_me.jpg" alt="Teacher Portrait">
+
+            <div class="about-text">
+
+                <div class="about-content" id="aboutContent">
+                
+                <p>
+                    Hi!
+                </p>
+                
+                <p>
+                    I am Sandra, a teacher of English as a foreign language (EFL)
+                    working in Gustav Adolf Grammar School and at the same time 
+                    working towards obtaining my teaching qualifications in the
+                    University of Tartu. 
+                </p>
+
+                <p>
+                    Before going into Education, I studied Comparative Literature in
+                    the United Kingdom. I received my undergraduate diploma from the
+                    University of Kent in England and later did my Master's in the 
+                    University of Edinburgh in Scotland and graduated in 2025.
+                </p>
+
+                <p>  
+                My previous experience in teaching includes working as a substitute
+                teacher during Covid pandemic in 2020 when I was hired by a local school 
+                in Estonia. I got the chance to work with students of different levels 
+                from primary school up to upper secondary years. After My studies in the
+                United Kingdom, I returned to Estonia and started working in Tallinn as a
+                teacher of English. 
+                </p>
+
+                <p>
+                As an EFL teacher my aim is to create a learning environment for students
+                that helps them feel confident, supported and motivated in the process of 
+                learning. I strive to create a classroom environment where students feel 
+                safe to take risks, make mistakes, ask questions, and grow at their own pace
+                because I believe that a safe learning space helps students thrive.
+                </p>
+
+                <p>
+                In order to achieve that I aim to create lessons that are well balanced, 
+                incorporating both structured learning and challenging tasks as well as 
+                creativity and fun. In doing so I hope to nurture students’ curiosity, 
+                resilience, and their sense of belonging.
+                </p> 
+
+                <p>
+                    Sandra Piho
+                </p>
+            </div>    
+                <button class="read-more-btn" id="readMoreBtn">
+                    Read More
+                </button>
+
+                <br>
+
+                <a href="CV_Sandra_Piho.pdf" class="btn">CV</a>
+
+            
+
+        </div>
+
+    </div>
+</section>
+
+<script>
+    const content = document.getElementById('aboutContent');
+    const button = document.getElementById('readMoreBtn');
+
+    const collapsedHeight = 220;
+
+    content.style.maxHeight = collapsedHeight + 'px';
+
+    button.addEventListener('click', () => {
+
+        if (content.classList.contains('expanded')) {
+
+            content.style.maxHeight = collapsedHeight + 'px';
+            content.classList.remove('expanded');
+            button.textContent = 'Read More';
+
+        } else {
+
+            content.style.maxHeight = content.scrollHeight + 'px';
+            content.classList.add('expanded');
+            button.textContent = 'Read Less';
+
+        }
+
+    });
+</script>
+
+<!-- EXPERIENCE -->
+
+<section id="experience">
+    <div class="container">
+
+        <h2 class="section-title">Experience and Education</h2>
+
+        <div class="timeline">
+            <h2 class="small-section-title"> Experience</h2>
+
+             <div class="timeline-item">
+                <h3>Teacher of English</h3>
+                <p>Gustav Adolf Grammar School • 2025–present</p>
+                
+            </div>
+
+            <div class="timeline-item">
+                <h3>Substitute Teacher</h3>
+                <p>Kohila Upper Secondary School • 2020–2021</p>
+                
+            </div>
+        </div>
+         <br>
+        <div class="timeline">
+            <h2 class="small-section-title">Education</h2>
+
+            <div class="timeline-item">
+                <h3>University of Tartu</h3>
+                <p>Master's Degree in Foreign Language Education  •  2025-present</p>
+            </div>
+            <div class="timeline-item">
+
+                <h3>University of Edinburgh</h3>
+                <p>
+                    Master's Degree in Comparative Literature  • 2024-2025 <br>
+                    
+                </p>
+            </div>
+            <div class="timeline-item">
+
+                <h3> University of Kent </h3>
+                <p>
+                    Bachelors Degree in Comparative literature  • 2019-2024
+                    
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- Competences -->
+
+<section class="competensy" id="competences">
+    <div class="container">
+
+        <h2 class="section-title">Competences</h2>
+
+        <p class="section-subtitle">
+            Mandatory competences in accordance with the Estonian Qualifications of Authority (Kutsekoda)
+        </p>
+
+        <div class="cards">
+
+            <div class="card">
+                <h3>General Competences</h3>
+                <p>
+                    Engaging young learners through creativity,
+                    exploration, and foundational skill development.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>Self-care and Professionalism</h3>
+                <p>
+                    Supporting academic growth with structured,
+                    student-centered learning strategies.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>Learner Support</h3>
+                <p>
+                    Preparing students for examinations,
+                    higher education, and independent learning.
+                </p>
+            </div>
+
+             <div class="card">
+                <h3>Institution and Colleagues</h3>
+                <p>
+                    Preparing students for examinations,
+                    higher education, and independent learning.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>General System of Education</h3> 
+                <p>
+                    Preparing students for examinations,
+                    higher education, and independent learning.
+                </p>
+            </div>
+
+        </div>
+    <br>
+    <div style="text-align: center;">
+
+    <a  href="competensy.html" class="btn" target="_blank" >
+        Resources and More    </a>
+
+    </div>
+
+    </div>
+</section>
+
+
+<!-- TEACHING STYLE -->
+
+<section class="style" id="style">
+    <div class="container">
+
+        <h2 class="section-title">Teaching</h2>
+
+        <div class="style-content">
+
+            <div class="quote">
+                "Children must be taught how to think, not what to think."<br> ― Margaret Mead
+            </div>
+
+            <p>
+                Describe your teaching philosophy here.
+                Explain how you create engaging lessons,
+                encourage critical thinking,
+                support diverse learning needs,
+                and foster a positive classroom environment.
+            </p>
+
+            <br>
+
+            <p>
+                Include methodologies such as project-based learning,
+                inquiry learning, collaborative activities,
+                technology integration, or differentiated instruction.
+            </p>
+             <p>
+                    passion for helping students succeed.
+                    Add information about your subjects,
+                    educational approach, and personal mission.
+                    teaching philisophy
+                </p>
+
+        </div>
+    </div>
+</section>
+
+
+
+<!-- TEACHING LEVELS -->
+
+<section id="levels">
+    <div class="container">
+
+        <h2 class="section-title">Maretials and Resources</h2>
+
+        <div class="cards">
+
+            <div class="card">
+                <h3>Primary Education</h3>
+                <p>
+                    Materials and resources for years 1-6 that help engage young 
+                    learners through creativity, exploration, and foundational skill development.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>Secondary Education</h3>
+                <p>
+                    Materials and resource for years 7-9 which support students' growth with structured,
+                    student-centered learning strategies.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>Inclusive Education</h3>
+                <p>
+                    Materials and resources for students with HEV</p>
+            </div>
+
+        </div>
+    <br>
+    <div style="text-align: center;">
+
+    <a  href="resources.html" class="btn" target="_blank" >
+        Resources and More    </a>
+
+    </div>
+
+    </div>
+</section>
+
+<!-- CONTACT -->
+
+<section class="contact" id="contact">
+    <div class="container">
+
+        <h2 class="section-title">Contact</h2>
+
+        <div class="contact-box">
+
+            
+            <p>Email: sandra.piho@gmail.com</p>
+
+            <p>Phone: +372 56611260</p>
+
+            <p>Location: Tallinn, Estonia</p>
+
+            <br>
+
+            <a href="https://www.linkedin.com/in/sandra-piho-066045405/" class="btn_lin" target="_blank">
+            </a>
+
+        </div>
+
+    </div>
+</section>
+
+</body>
+</html>
