@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Teacher Competency</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+:root{
+    --forest:#2f4f3e;
+    --sage:#7c9a7e;
+    --light-sage:#eaf0e8;
+    --cream:#f8f6f1;
+    --gold:#c8aa6e;
+    --text:#333333;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Open Sans',sans-serif;
+    background:var(--cream);
+    color:var(--text);
+    line-height:1.7;
+}
+
+nav{
+    position:fixed;
+    top:0;
+    width:100%;
+    background:rgba(248,246,241,0.96);
+    backdrop-filter:blur(10px);
+    z-index:1000;
+    border-bottom:1px solid rgba(0,0,0,0.08);
+}
+
+.nav-container{
+    max-width:1200px;
+    margin:auto;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:18px 40px;
+}
+
+.logo{
+    font-family:'Cormorant Garamond',serif;
+    font-size:2rem;
+    color:var(--forest);
+    font-weight:600;
+}
+
+nav ul{
+    list-style:none;
+    display:flex;
+    gap:30px;
+}
+
+nav a{
+    text-decoration:none;
+    color:var(--forest);
+    font-weight:600;
+    transition:.3s;
+}
+
+nav a:hover{
+    color:var(--gold);
+}
+
+section{
+    padding:120px 10% 80px;
+}
+
+.container{
+    max-width:1200px;
+    margin:auto;
+}
+
+.hero{
+    min-height:70vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    background:
+    linear-gradient(rgba(47,79,62,0.65),
+    rgba(47,79,62,0.65)),
+    url("https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=1600&q=80");
+    background-size:cover;
+    background-position:center;
+    color:white;
+}
+
+.hero h1{
+    font-family:'Cormorant Garamond',serif;
+    font-size:4.5rem;
+    margin-bottom:20px;
+}
+
+.hero p{
+    max-width:700px;
+    margin:auto;
+    font-size:1.2rem;
+}
+
+.section-title{
+    font-family:'Cormorant Garamond',serif;
+    color:var(--forest);
+    font-size:3rem;
+    text-align:center;
+    margin-bottom:20px;
+}
+
+.section-subtitle{
+    text-align:center;
+    max-width:800px;
+    margin:0 auto 50px;
+    color:#666;
+}
+
+.resources-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+    gap:30px;
+}
+
+.resource-card{
+    background:white;
+    border-radius:12px;
+    padding:35px;
+    box-shadow:0 6px 20px rgba(0,0,0,0.08);
+}
+
+.resource-card h3{
+    color:var(--forest);
+    font-family:'Cormorant Garamond',serif;
+    font-size:2rem;
+    margin-bottom:15px;
+}
+
+.resource-card ul{
+    margin-top:20px;
+    padding-left:20px;
+}
+
+.resource-card li{
+    margin-bottom:12px;
+}
+
+.upload-section{
+    background:var(--light-sage);
+}
+
+.upload-box{
+    background:white;
+    max-width:800px;
+    margin:auto;
+    padding:40px;
+    border-radius:12px;
+    box-shadow:0 6px 20px rgba(0,0,0,0.08);
+}
+
+.form-group{
+    margin-bottom:25px;
+}
+
+label{
+    display:block;
+    margin-bottom:8px;
+    color:var(--forest);
+    font-weight:600;
+}
+
+input,
+select,
+textarea{
+    width:100%;
+    padding:14px;
+    border:1px solid #d9d9d9;
+    border-radius:6px;
+    font-family:inherit;
+}
+
+textarea{
+    min-height:120px;
+}
+
+.btn{
+    background:var(--forest);
+    color:white;
+    border:none;
+    padding:14px 30px;
+    border-radius:6px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.btn:hover{
+    background:#243d30;
+}
+
+.library{
+    background:var(--cream);
+}
+
+.library-table{
+    background:white;
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:0 6px 20px rgba(0,0,0,0.08);
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+th{
+    background:var(--forest);
+    color:white;
+    padding:18px;
+}
+
+td{
+    padding:18px;
+    border-bottom:1px solid #eeeeee;
+}
+
+.download-btn{
+    text-decoration:none;
+    color:var(--forest);
+    font-weight:600;
+}
+
+footer{
+    background:var(--forest);
+    color:white;
+    text-align:center;
+    padding:40px;
+}
+
+@media(max-width:768px){
+
+.hero h1{
+    font-size:3rem;
+}
+
+nav ul{
+    gap:15px;
+    font-size:0.9rem;
+}
+
+.section-title{
+    font-size:2.4rem;
+}
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+    <div class="nav-container">
+        <div class="logo">Teaching Resources</div>
+
+        <ul>
+            <li><a href="page.html">Portfolio</a></li>
+            <li><a href="#general">General</a></li>
+            <li><a href="#selfcare">Self-care</a></li>
+            <li><a href="#support">Leaner support</a></li>
+            <li><a href="#institution">Institutuon & Colleagues</a></li>
+            <li><a href="#system">Education system</a></li>
+
+        </ul>
+    </div>
+</nav>
+
+<section class="hero">
+    <div>
+        <h1>Competences</h1>
+
+        <p>
+            An overview of competences.
+        </p>
+    </div>
+</section>
+
+<section id="general">
+    <div class="container">
+
+        <h2 class="section-title">General Competences</h2>
+
+        <p class="section-subtitle">
+            
+            <p>Thinking skills</p>
+
+            <br>
+
+            <p> 
+
+                1. Analytical and synthetic skills - uses system reasoning in thinking, understands processes,
+                phenomena and related parties and explains the relationships between them, the strengths and 
+                weaknesses of alternatives when making decisions, and the new wholes and conclusions reached.
+                
+            </p>
+
+            <p>
+                2. Learning skills - selects and adapts effective learning strategies to acquire new competencies, 
+                and is able to purposefully manage motivation and emotions related to management.
+            </p> 
+
+            <p>
+                3. Innovation competence ¬ approaches difficulties and problems from different perspectives, seeks 
+                creative and effective solutions to them and applies novel approaches, methods and materials, being 
+                ready to cope with uncertainty and the possibility of error.
+            </p>
+
+            <br>
+
+            <p>Self-management skills</p>
+
+            <br>
+
+            <p>
+                4. Based on values ​​- follows the universal human and organizational values ​​and principles of their activities.
+
+            </p>
+
+            <p>
+                5. Resilience - copes with changes in feelings, thoughts and behaviour, responding adequately and appropriately 
+                and restoring the balance necessary for self-care.
+            </p>
+                
+            <br>
+
+            <p>Transition skills</p>
+
+            <br>
+
+            <p>
+                6. Communication skills - creates, maintains and develops trusting, cooperative relationships with other people, 
+                the purpose of which is clear and polite. Notices the needs, expectations and emotions of oneself and others and 
+                adapts communication, supports a positive and understanding communication environment.
+            </p>
+
+            <p>
+                7. Collaboration skills - sets goals together with others and works effectively to achieve them, taking into account 
+                the necessary points of view.
+            </p>
+
+            <p>
+                8. Digital competence - has a positive attitude towards the meaningful purposeful use of digital tools, environments 
+                and content. Implements and adapts them effectively, ethically and responsibly in their work. Has acquired the 
+                necessary digital competences.
+            </p>
+
+            <br>
+
+           </p>
+
+
+
+
+
+
+
+
+
+        </p>
+
+        
+
+    </div>
+</section>
+
+<section id="selfcare">
+    <div class="container">
+
+        <h2 class="section-title">Self-care and Professionalism</h2>
+
+        <p class="section-subtitle">
+
+            <p>Performance indicators</p>
+
+            <br>
+
+            <p>1. Maintaining health - takes care of one's mental, physical, social and emotional well-being.</p>
+
+            <p>2. Maintaining balance ¬ takes care of one's work and private life balance.</p>
+
+            <p>3. Shaping a career path - consciously shapes one's career path and learning as a teacher, 
+            based on reflection on one's professional activities.</p>
+
+            <p>4. Updating knowledge - keeps oneself up to date with innovations in the field and teaching and learning, 
+            scientific literature and research.</p>
+
+            <p>5. Applying a research approach to developing one's professionalism - analyzes and improves 
+            one's teaching skills by applying a research approach.</p>
+
+            <br>
+
+            <p>Knowledge</p>
+
+            <p>Reflection and reflection models, knowledge of self-care (mental, physical, social, emotional), 
+            research, including action research methodology, data literacy and the ability to find and 
+            evaluate research-based information, legislation regulating teaching work (rights and obligations), 
+            teacher ethics</p>
+
+
+
+        </p>
+
+        
+
+    </div>
+</section>
+
+<section id="support">
+    <div class="container">
+
+        <h2 class="section-title">Learner Support</h2>
+
+        <p class="section-subtitle">
+
+            <p>Performance indicators</p>
+
+            <br>
+
+            <p>
+                1. Getting to know learners - gets to know each learner and group of learners, 
+                including their specific characteristics.
+            </p>
+
+            <p>
+                2. Building relationships, shaping the environment and caring for learners - 
+                builds good relationships with learners, creates a safe and inclusive environment 
+                for learning and cares about the development of each learner.
+            </p>
+
+            <p>
+                3. Planning and teaching - plans teaching pedagogically competently, 
+                based on the curriculum. Participates in the development of the curriculum. 
+                Treats the learning process as a whole and adapts it, based on the age, abilities, 
+                needs and mental and physical well-being of learners. Implements health-promoting activities, 
+                including active and movement-integrated learning activities, stretching and movement breaks.
+            </p>
+
+            <p>
+                4. Selecting, adapting, compiling and sharing learning materials - selects, adapts and 
+                compiles appropriate learning materials for learners, taking into account the specific 
+                characteristics of learners.
+            </p>
+
+            <p>
+                5. Content management ¬ addresses content in a scientific and evidence-based manner 
+                and generates interest in the subject and supports deep learning.
+            </p>
+
+            <p>
+                6. Value development and adherence - develops and adheres to values ​​agreed upon together with learners.
+            </p>
+
+            <p>
+                7. Development of general competences - supports the development of learners' general competences.
+            </p>
+
+            <p>
+                8. Enables learners in a targeted manner and actively guides them to take responsibility 
+                for their own learning and development. Is aware of the impact of stereotypes, including 
+                in their own attitudes, and avoids reinforcing them in their work.
+            </p>
+
+            <p>
+                9. Feedback and assessment - provides learners with constructive feedback on the learning process 
+                and learning outcomes and assesses learners using appropriate and learner-inclusive methods.
+            </p>
+
+            <br>
+            <p>Knowledge</p>
+            <br>
+            <p>
+                Basics of psychological functioning, motivational theories, developmental mindset, socio-emotional skills, 
+                general competencies and opportunities for their development, assessment and feedback options to support 
+                learning, including data literacy, the nature and implementation of inclusive education, curricula, 
+                knowledge of the field of study according to the type of education, teaching methods and principles for their 
+                selection in supporting deep learning, the nature and implementation of integration, the application of 
+                technology in supporting learning, legislation regulating learning and teaching.
+            </p>
+
+
+        </p>
+
+        
+
+    </div>
+</section>
+
+
+<section id="institution">
+    <div class="container">
+
+        <h2 class="section-title">Contribution to the Institution and Colleagues</h2>
+
+        <p class="section-subtitle">
+            
+            <p>Performance indicators</p>
+
+            <br>
+
+            <p>
+                1. Goal-oriented and values-based - guided by the organization's goals and values ​​and 
+                their own rights and obligations.
+            </p>
+
+            <p>
+                2. Collaboration with colleagues in their organization - acts collaboratively and initiates collaboration.
+            </p>
+
+            <p>
+                3. Safe working environment - creates a supportive and safe working environment with colleagues.
+            </p>
+
+            <p>
+                4. Supporting the professional development of colleagues - supports the professional development of colleagues 
+                by sharing methodologies and learning materials.
+            </p>
+
+            <p>
+                5. Communication and cooperation with parents - cooperates with parents, exchanging and 
+                mediating information and applying the basic principles of communication.
+            </p>
+
+            <p>
+                6. Information and data in the organization - processes information responsibly, 
+                following the principles of confidentiality and data protection, assessing the value and 
+                impact of information and making decisions about its processing.
+            </p>
+
+            <br>
+            
+            <p>Knowledge</p>
+            
+            <br>
+            
+            <p>
+                Data protection, conflict resolution, collective effectiveness, cooperation processes, 
+                listening skills, counseling competence, organizational culture, labor law
+            </p>
+
+        </p>
+
+        
+
+    </div>
+</section>
+
+
+<section id="system">
+    <div class="container">
+
+        <h2 class="section-title">Contribution to the General System of Education</h2>
+
+        <p class="section-subtitle">
+            
+            <p>Performance indicators:</p>
+
+            <br>
+
+            <p>
+                1. Cooperation and contribution to the work of field or professional associations - 
+                participates in the activities of field or professional associations.
+            </p>
+
+            <p>
+                2. Creating a positive image of the teaching profession - is a role model in the 
+                role of a teacher and contributes to creating a positive image of teachers in 
+                society and valuing the teaching profession.
+            </p>
+
+            <p>
+                3. Dissemination of pedagogical knowledge in society - participates in public 
+                events in the field of education, research and/or project groups.
+            </p>
+
+            <br>
+
+            <p>Knowledge</p>
+
+            <p>
+                Strategic documents in the field of education, media literacy, professional networks
+            </p>
+
+        </p>
+
+        
+
+    </div>
+</section>
+
+
+
+
+<footer>
+    <p>Teacher Portfolio • Educational Resource Centre</p>
+</footer>
+
+</body>
+</html>

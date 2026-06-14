@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Teaching Resources</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+:root{
+    --forest:#2f4f3e;
+    --sage:#7c9a7e;
+    --light-sage:#eaf0e8;
+    --cream:#f8f6f1;
+    --gold:#c8aa6e;
+    --text:#333333;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Open Sans',sans-serif;
+    background:var(--cream);
+    color:var(--text);
+    line-height:1.7;
+}
+
+nav{
+    position:fixed;
+    top:0;
+    width:100%;
+    background:rgba(248,246,241,0.96);
+    backdrop-filter:blur(10px);
+    z-index:1000;
+    border-bottom:1px solid rgba(0,0,0,0.08);
+}
+
+.nav-container{
+    max-width:1200px;
+    margin:auto;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:18px 40px;
+}
+
+.logo{
+    font-family:'Cormorant Garamond',serif;
+    font-size:2rem;
+    color:var(--forest);
+    font-weight:600;
+}
+
+nav ul{
+    list-style:none;
+    display:flex;
+    gap:30px;
+}
+
+nav a{
+    text-decoration:none;
+    color:var(--forest);
+    font-weight:600;
+    transition:.3s;
+}
+
+nav a:hover{
+    color:var(--gold);
+}
+
+section{
+    padding:120px 10% 80px;
+}
+
+.container{
+    max-width:1200px;
+    margin:auto;
+}
+
+.hero{
+    min-height:70vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    background:
+    linear-gradient(rgba(47,79,62,0.65),
+    rgba(47,79,62,0.65)),
+    url("https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=1600&q=80");
+    background-size:cover;
+    background-position:center;
+    color:white;
+}
+
+.hero h1{
+    font-family:'Cormorant Garamond',serif;
+    font-size:4.5rem;
+    margin-bottom:20px;
+}
+
+.hero p{
+    max-width:700px;
+    margin:auto;
+    font-size:1.2rem;
+}
+
+.section-title{
+    font-family:'Cormorant Garamond',serif;
+    color:var(--forest);
+    font-size:3rem;
+    text-align:center;
+    margin-bottom:20px;
+}
+
+.section-subtitle{
+    text-align:center;
+    max-width:800px;
+    margin:0 auto 50px;
+    color:#666;
+}
+
+.resources-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+    gap:30px;
+}
+
+.resource-card{
+    background:white;
+    border-radius:12px;
+    padding:35px;
+    box-shadow:0 6px 20px rgba(0,0,0,0.08);
+}
+
+.resource-card h3{
+    color:var(--forest);
+    font-family:'Cormorant Garamond',serif;
+    font-size:2rem;
+    margin-bottom:15px;
+}
+
+.resource-card ul{
+    margin-top:20px;
+    padding-left:20px;
+}
+
+.resource-card li{
+    margin-bottom:12px;
+}
+
+.upload-section{
+    background:var(--light-sage);
+}
+
+.upload-box{
+    background:white;
+    max-width:800px;
+    margin:auto;
+    padding:40px;
+    border-radius:12px;
+    box-shadow:0 6px 20px rgba(0,0,0,0.08);
+}
+
+.form-group{
+    margin-bottom:25px;
+}
+
+label{
+    display:block;
+    margin-bottom:8px;
+    color:var(--forest);
+    font-weight:600;
+}
+
+input,
+select,
+textarea{
+    width:100%;
+    padding:14px;
+    border:1px solid #d9d9d9;
+    border-radius:6px;
+    font-family:inherit;
+}
+
+textarea{
+    min-height:120px;
+}
+
+.btn{
+    background:var(--forest);
+    color:white;
+    border:none;
+    padding:14px 30px;
+    border-radius:6px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.btn:hover{
+    background:#243d30;
+}
+
+.library{
+    background:var(--cream);
+}
+
+.library-table{
+    background:white;
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:0 6px 20px rgba(0,0,0,0.08);
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+th{
+    background:var(--forest);
+    color:white;
+    padding:18px;
+}
+
+td{
+    padding:18px;
+    border-bottom:1px solid #eeeeee;
+}
+
+.download-btn{
+    text-decoration:none;
+    color:var(--forest);
+    font-weight:600;
+}
+
+footer{
+    background:var(--forest);
+    color:white;
+    text-align:center;
+    padding:40px;
+}
+
+@media(max-width:768px){
+
+.hero h1{
+    font-size:3rem;
+}
+
+nav ul{
+    gap:15px;
+    font-size:0.9rem;
+}
+
+.section-title{
+    font-size:2.4rem;
+}
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+    <div class="nav-container">
+        <div class="logo">Teaching Resources</div>
+
+        <ul>
+            <li><a href="page.html">Portfolio</a></li>
+            <li><a href="#primary">Primary</a></li>
+            <li><a href="#secondary">Secondary</a></li>
+        </ul>
+    </div>
+</nav>
+
+<section class="hero">
+    <div>
+        <h1>Classroom Materials</h1>
+
+        <p>
+            A curated collection of worksheets, lesson plans,
+            presentations, reading materials and classroom resources
+            for students and families.
+        </p>
+    </div>
+</section>
+
+<section id="primary">
+    <div class="container">
+
+        <h2 class="section-title">Primary School Resources</h2>
+
+        <p class="section-subtitle">
+            Foundational learning materials designed for younger learners.
+        </p>
+
+        <div class="resources-grid">
+
+            <div class="resource-card">
+                <h3>Language Arts</h3>
+
+                <ul>
+                    <li>Reading comprehension worksheets</li>
+                    <li>Vocabulary exercises</li>
+                    <li>Writing prompts</li>
+                    <li>Story analysis activities</li>
+                </ul>
+            </div>
+
+            <div class="resource-card">
+                <h3>Mathematics</h3>
+
+                <ul>
+                    <li>Number sense activities</li>
+                    <li>Problem-solving exercises</li>
+                    <li>Geometry worksheets</li>
+                    <li>Practice assessments</li>
+                </ul>
+            </div>
+
+            <div class="resource-card">
+                <h3>Science & Nature</h3>
+
+                <ul>
+                    <li>Experiment guides</li>
+                    <li>Observation journals</li>
+                    <li>Interactive projects</li>
+                    <li>Study sheets</li>
+                </ul>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<section id="secondary">
+    <div class="container">
+
+        <h2 class="section-title">Secondary School Resources</h2>
+
+        <p class="section-subtitle">
+            Advanced materials supporting deeper understanding and examination preparation.
+        </p>
+
+        <div class="resources-grid">
+
+            <div class="resource-card">
+                <h3>Humanities</h3>
+
+                <ul>
+                    <li>Essay guides</li>
+                    <li>Research projects</li>
+                    <li>Historical source analysis</li>
+                    <li>Exam preparation packs</li>
+                </ul>
+            </div>
+
+            <div class="resource-card">
+                <h3>Mathematics</h3>
+
+                <ul>
+                    <li>Practice tests</li>
+                    <li>Formula sheets</li>
+                    <li>Worked examples</li>
+                    <li>Revision materials</li>
+                </ul>
+            </div>
+
+            <div class="resource-card">
+                <h3>Sciences</h3>
+
+                <ul>
+                    <li>Lab reports</li>
+                    <li>Revision summaries</li>
+                    <li>Topic presentations</li>
+                    <li>Investigation templates</li>
+                </ul>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<footer>
+    <p>Teacher Portfolio • Educational Resource Centre</p>
+</footer>
+
+</body>
+</html>
